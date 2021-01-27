@@ -12,19 +12,17 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false}))
 
 app.get('/', (req,res) => {
-const articles = [{
-    title: 'Test Article',
-    createdAt: new Date(),
-    description: 'Test Description'
-},
-{
-    title: 'Test Article2',
-    createdAt: new Date(),
-    description: 'Test Description2'
-}
-]    
-res.render('articles/index', {articles: articles})
-
+    const articles = [{
+        title: 'Test Article',
+        createdAt: new Date(),
+        description: 'Test Description'
+    },
+    {
+        title: 'Test Article2',
+        createdAt: new Date(),
+        description: 'Test Description2'
+    }]    
+    res.render('articles/index', {articles: articles})
 })
 
 app.use('/articles', articleRouter)
